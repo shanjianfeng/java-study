@@ -13,8 +13,9 @@ public abstract class AbstractHashMap<K, V> {
 		}
 	}
 
+	//阈值，达到阈值即进行扩容
     protected int threshold;
-    
+	
     static final int MAXIMUM_CAPACITY = 1 << 30;
 
     static final int DEFAULT_INITIAL_CAPACITY = 1 << 4;

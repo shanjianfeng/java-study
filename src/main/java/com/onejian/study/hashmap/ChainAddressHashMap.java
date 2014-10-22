@@ -26,7 +26,8 @@ public class ChainAddressHashMap<K, V> extends AbstractHashMap<K, V>{
 
 	Node<K, V>[] table;
 
-	int count = 0;
+	int tableNodeCount = 0;
+	
     @SuppressWarnings("unchecked")
 	ChainAddressHashMap() {
     	super();
@@ -65,8 +66,8 @@ public class ChainAddressHashMap<K, V> extends AbstractHashMap<K, V>{
 			node.next = tmp;
 		}
 		
-		count++;
-		if(count >= threshold) {
+		tableNodeCount++;
+		if(tableNodeCount >= threshold) {
 			int newSize = table.length << 1;
 			if(newSize >= MAXIMUM_CAPACITY)
 				return null;
